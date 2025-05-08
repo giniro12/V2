@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anggota Komunitas - KOMPENI</title>
+  <link rel="stylesheet" href="anggota.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">KOMPENI</div>
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang Kami</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="event.html">Event</a>
+        <a href="anggota.html">Anggota</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="anggota-container">
+    <h1>Anggota Komunitas</h1>
+    <div class="anggota-grid">
+      <div class="anggota-card fade-in">
+        <img src="profil1.jpg" alt="Andika" class="profil-img" />
+        <h3>Andika</h3>
+        <p>Mitsubishi Lancer Itasha</p>
+        <img src="mita1.jpg" alt="Mobil Andika" class="itasha-img" />
+      </div>
+      <div class="anggota-card fade-in">
+        <img src="profil2.jpeg" alt="Ilham Muhsin" class="profil-img" />
+        <h3>Ilham Muhsin</h3>
+        <p>MX KING - Akame</p>
+        <img src="mita2.jpg" alt="Motor Ilham" class="itasha-img" />
+      </div>
+      <div class="anggota-card fade-in">
+        <img src="profil3.jpg" alt="Sarah Yuna" class="profil-img" />
+        <h3>Sarah Yuna</h3>
+        <p>Honda Jazz Vocaloid Edition</p>
+        <img src="mita3.jpg" alt="Mobil Sarah" class="itasha-img" />
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Fade-in animation saat scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

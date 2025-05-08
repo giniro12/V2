@@ -1,0 +1,147 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #f0f4f8, #ffffff);
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(to right, #ffffff, #f8fafc);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #334155;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff3366;
+  transition: width .3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.about-container {
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.about-container h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #111827;
+  position: relative;
+}
+
+.about-container h1::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #ff3366;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.about-container p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: justify;
+  color: #4b5563;
+}
+
+.about-container ul {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  cursor: pointer;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.show,
+.gallery img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 30px 20px;
+  }
+
+  .about-container h1 {
+    font-size: 28px;
+  }
+
+  .about-container p {
+    font-size: 16px;
+  }
+} 
